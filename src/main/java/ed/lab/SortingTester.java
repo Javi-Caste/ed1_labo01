@@ -25,6 +25,13 @@ public class SortingTester<T extends Comparable<T>> {
             final LocalDateTime end = LocalDateTime.now();
             durations.add(Duration.between(start, end));
         }
+        long sum = durations.stream()
+                .mapToLong(Duration::toMillis)
+                .sum();
+
+//        for(Duration duration : durations){
+//            sum += duration.toMillis();
+//        }
 
         double average = durations.stream()
                 .mapToLong(Duration::toMillis)
