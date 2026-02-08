@@ -28,10 +28,7 @@ public class SortingTester<T extends Comparable<T>> {
         long sum = durations.stream()
                 .mapToLong(Duration::toMillis)
                 .sum();
-
-//        for(Duration duration : durations){
-//            sum += duration.toMillis();
-//        }
+    
 
         double average = durations.stream()
                 .mapToLong(Duration::toMillis)
