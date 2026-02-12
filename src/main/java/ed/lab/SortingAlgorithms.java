@@ -66,18 +66,19 @@ public class SortingAlgorithms {
         for (T element : array) {
             System.out.print(element + " ");
         }
+        // Move pivot to end first
+        swap(array, pivotIndex, high);
+        T pivotValue = array[high];
+        
         int i = low - 1;
         for (int j = low; j < high; j++) {
-            if (j == pivotIndex) {
-                continue; // Saltar el pivote
-            }
-            if (array[j].compareTo(array[pivotIndex]) <= 0) {
+            if (array[j].compareTo(pivotValue) <= 0) {
                 i++;
                 swap(array, i, j);
             }
         }
 
-        swap(array, i + 1, pivotIndex);
+        swap(array, i + 1, high);
         return i + 1;
     }
 
